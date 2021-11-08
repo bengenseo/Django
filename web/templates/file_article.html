@@ -1,0 +1,26 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+    <main class="article w88 ma bw p20">
+        <article class="list fl mb10">
+            <section class="fl mt10">
+                {% for item in article %}
+                <h2 class="p10"><a href="{{ item.get_absolute_url }}" class="fz16">{{ item.title }}</a></h2>
+                <figure class="clearfix">
+                    {% if item.litpic %}
+                        <a href="{{ item.get_absolute_url }}"><img class="ib pl10" width="188px" height="100px" src="{{ item.litpic }}" height="100" alt="{{ item.title }}"></a>
+                    {% endif %}
+                    <p class="ib plr10">{{ item.description }}</p>
+                </figure>
+                {% endfor %}
+            </section>
+
+            <div class="pagess">
+                <ul>
+                 {dede:pagelist listitem="index,end,pre,next,pageno" listsize="5"/}
+                </ul>
+            </div>
+        </article>
+        {% include 'aside.html' %}
+    </main>
+{% endblock %}

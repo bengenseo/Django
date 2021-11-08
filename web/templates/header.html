@@ -1,0 +1,35 @@
+<header id="head" class="mb15 bw">
+    <menu class="ma">
+        <h2 class="fl"><a href="/" class="block">财商教育</a></h2>
+        <nav class="fl ml10">
+            <h2 class="none">财商培训</h2>
+            {% for item in arctype %}
+                {% if item.id != 4 %}
+                    <li class="fl"><a href="/{{ item.sitepath }}" class="fz18 block plr10">{{ item.typename }}</a></li>
+                {% endif %}
+            {% endfor %}
+            <li class="fl">
+                <form method="get" action="/search/">
+                    <input name="q" type="text" placeholder="搜索">
+                </form>
+            </li>
+            <li class="fl">
+                {% if user.is_authenticated %}
+                    {{ user.username }} -<a href="{% url 'web:user' %}"> 个人中心,</a>
+                    <a href="{% url 'web:quit' %}"> 退出</a>
+                {% else %}
+                    <a href="{% url 'web:login' %}">登陆</a>
+                    <a href="{% url 'web:register' %}">注册</a>
+                {% endif %}
+            </li>
+        </nav>
+        {% for item in arctype %}
+            {% if item.id == 4 %}
+                <div class="toack fr mtb10">
+                    <span class="block"><a href="/{{ item.sitepath }}" class="fz16 cw block plr30" target="_blank"
+                                           rel="nofollow">{{ item.typename }}</a></span>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </menu>
+</header>

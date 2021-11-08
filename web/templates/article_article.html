@@ -1,0 +1,22 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+    <main class="article w88 ma bw p20">
+        <article class="content fl mt10 p20">
+            {% for item in article %}
+            <h1 class="fz22 tc">{{ item.title }}</h1>
+            <div class="author tc mt15 mb10"><span><i class="fa fa-user plr5"></i>作者：{{ item.author }}</span> <span><i class="fa fa-link plr5"></i>来源：未定义</span> <time><i class="fa fa-clock-o plr5"></i>{{ item.senddate }}</time> <span><i class="fa fa-eye plr5"></i>浏览: {{ item.click }} 次</span></div>
+            {{ item.article.body|safe }}
+            {% endfor %}
+            <div class="related mt30">
+                <h3 class="fz18 mb10">价值投资文章相关推荐：</h3>
+                <ul>
+                {dede:likeart row='14' titlelen='100'}
+                    <li class="fl lh30 plr5"><a href="[field:arcurl /]">[field:title /]</a></li>
+                {/dede:likeart}
+                </ul>
+            </div>
+        </article>
+    </main>
+{% endblock %}

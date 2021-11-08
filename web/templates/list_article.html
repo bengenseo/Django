@@ -1,0 +1,66 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block css %}
+<style>
+.page{
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+    <main class="article w88 ma bw p20">
+        <article class="list fl mb10">
+            <section class="fl mt10">
+                {% for item in archives %}
+                    <h2 class="p10"><a href="{{ item.get_absolute_url }}" class="fz16">{{ item.title }}</a></h2>
+                    <figure class="clearfix">
+                        {% if item.litpic %}
+                            <a href="{{ item.get_absolute_url }}">
+                                <img class="ib pl10" width="188px" height="100px" src="{{ item.litpic }}" height="100"
+                                     alt="{{ item.title }}">
+                            </a>
+                        {% endif %}
+                        <p class="ib plr10">{{ item.description }}</p>
+                    </figure>
+                {% endfor %}
+            </section>
+
+            <section class="page">
+                <ul class="pagination">
+                    <li>
+                        <a href="?bn=1" aria-label="home">首 页</a>
+                    </li>
+                    {% if archives.has_previous %}
+                        <li>
+                            <a href="?bn={{ archives.previous_page_number }}" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for item in pageList %}
+                        {% if num == item %}
+                            <li class="active"><a href="javascript:;">{{ item }}</a></li>
+                        {% else %}
+                            <li><a href="?bn={{ item }}">{{ item }}</a></li>
+                        {% endif %}
+
+                    {% endfor %}
+                    {% if archives.has_next %}
+                        <li>
+                            <a href="?bn={{ archives.next_page_number }}" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    <li>
+                        <a href="?bn={{ pager.num_pages }}" aria-label="end">末 页</a>
+                    </li>
+                </ul>
+            </section>
+        </article>
+        {% include 'aside.html' %}
+    </main>
+{% endblock %}

@@ -1,0 +1,94 @@
+@charset "utf-8";
+body{background: #F7F8FA;color: #666;}
+.w960{width: 66%;margin: 0 auto;max-width: 1200px}
+#head menu,footer address,.w88{width: 88%;max-width: 1200px}
+#head{border-bottom: solid 1px #F0F0F0;}
+#head h1,#head h2{width: 125px;height: 60px;background: url(../images/logo.png)no-repeat;text-indent: -9999px;}
+#head h1 a,#head h2 > a{height: 60px;}
+#head nav{line-height: 60px;}
+#head nav a:hover{background: #eee}
+.toack{height: 35px;line-height: 35px;}
+.toack span{background-color: #3793FF;border-radius: 5px}
+.article{text-align: justify;box-shadow: 0 1px 3px rgba(0,37,55,.05);border: 1px solid #e7e8e9;border-radius: 5px;}
+.article article p{line-height: 35px}
+.box{margin:20px 0 0 0;max-width:100%;max-height:500px;border:1px solid #ddd;padding:10px;overflow:hidden;}
+.box ul li{line-height:30px;}
+.box ul li h2{color: #ff5700}
+.box ul li p{text-indent: 2em;}
+.book tbody td{text-align: center;padding: 5px 0}
+.book tbody tr:nth-child(2n) {background: #DBB181;color: #fff;}
+.form nav input,.form nav textarea{border: 1px solid #999;}
+.coolbg{/*按钮*/color: #fff;width: 100px;height: 40px;background: #0F9BFF;border-width: 2px;border-style: outset;border-color: buttonface;border-image: initial;}
+.coolbg:hover{color: #0F9BFF;background: #fff;}
+.article{text-align: justify;box-shadow: 0 1px 3px rgba(0,37,55,.05);border: 1px solid #e7e8e9;border-radius: 5px;}
+.article .list figure p{width: calc(100% - 200px);height:105px}
+.article .list{width: 68%}
+.article .list section{width: 100%; border: 1px solid #e7e8e9;}
+.article .list section h2{border-bottom: 1px solid #e7e8e9;white-space: nowrap;}
+.article .list section h2,.article .list figure p,.article .sideBar h2{overflow: hidden;text-overflow: ellipsis; }
+.article .list figure img{vertical-align: baseline;}
+.article .list ul li,.article .sideBar ul li{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.article .sideBar{width: 29%;border: 1px solid #e7e8e9;border-top: 0}
+.article .sideBar h2{border-top: 1px solid #e7e8e9;border-bottom: 1px solid #e7e8e9;}
+.article .content{width:100%;border: 1px solid #e7e8e9;}
+.article .content p{text-indent: 2em;line-height: 35px;}
+.article .content .related h3{color: #3793FF}
+.article .content .related ul li{width: 50%;}
+.article .erweima{width: 49%;display: inline-block;}
+.article .erweima a{color: #ff5700}
+/*拦截畅言广告开始*/
+#pop_ad{
+    right: -9999px!important;
+    bottom: -9999px!important;
+    z-index: -9999!important;
+}
+#feedAv,.module-hot-topic{position: absolute !important;z-index: -9999px;left: -1000px;opacity: 0 !important;}
+/*拦截畅言广告结束*/
+/* 分页 */
+.pagess {
+    clear: both;
+    padding: 20px 20px 0;
+    overflow: hidden;
+    margin-left: 0px;
+    text-align: center;
+    font-size: 12px;}
+.pagess ul li {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 2px 9px;
+    margin: 0 3px;
+    line-height: 20px;
+    background: #fff;
+    color: #999;}
+footer{color: #999}
+/* top */
+#scroll {position:fixed; bottom:50px; right:20px;height: 200px;}
+.scrollItem {width: 45px;height: 45px;line-height: 45px;background: #F3F3F3;border:#e1e1e1 1px solid;cursor:pointer; text-align:center; margin-top:5px;border-radius: 3px;}
+.scrollItem.qq{color: #dd4814;padding-top: 2px;animation: blink .7s linear infinite;}
+/* 字体闪烁 */
+@keyframes blink{
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+/* end */
+.scrollItem:hover{color: #fff;background: #3793FF;animation: none;}
+.weixin{width: 108px;height: 108px;right: 70px;bottom: 120px;display: none;}
+.scrollItem.wx{color: #3793FF;animation: blink .7s linear infinite;}
+.scrollItem.wx:hover{color: #fff;animation: none;}
+.scrollItem.wx:hover .weixin{ display:block!important;}
+@media (min-width: 768px) and (max-width: 991px){
+    .article{width: 100%}
+    .article .list{width: 100%}
+    .article .sideBar{display: none;}
+}
+@media only screen and (max-width: 767px){
+    #head h1,#head h2{float: none!important;margin:0 auto;}
+    #head h1 a,#head h2 a{height: 40px;}
+    #head nav{line-height: 40px;}
+    .toack{margin-top: 0}
+    .w960{width: 100%}
+    .article{width: 100%}
+    .article .list{width: 100%}
+    .article .sideBar{display: none;}
+    .article .list section{width: 100%}
+}

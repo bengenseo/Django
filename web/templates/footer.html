@@ -1,0 +1,30 @@
+{% load static %}
+<footer class="mt15 bw fz12">
+    <div id="scroll">
+        <div class="h50">
+            <a class="scrollItem qq block" href="http://wpa.qq.com/msgrd?v=3&uin=747995996&site=qq&menu=yes" target="_blank" class="fz18 block plr10" rel="nofollow"><i class="fa fa-qq fa-2x"></i></a>
+        </div>
+        <div class="h50">
+            <a class="scrollItem wx block" href="javascript:void(0)" class="fz18 block plr10" rel="nofollow">
+                <i class="fa fa-weixin fa-2x"></i>
+                <div class="weixin pof">
+                    <img src="{% static 'images/weixin.jpg' %}" height="108" width="108" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="scrollItem" id="toTop"><i class="fa fa-chevron-up"></i></div>
+        <div class="scrollItem" id="toBottom"><i class="fa fa-chevron-down"></i></div>
+    </div>
+    <address class="ma tc lh50">
+        copyright @ www.52geju.com 2014-2019
+      {dede:global.cfg_umeng/}
+    </address>
+    <script>
+        {# form表单 删除提示 #}
+        $(function () {
+            $('input').on('input', function () {
+                $('.errorlist').remove()
+            });
+        })
+    </script>
+</footer>

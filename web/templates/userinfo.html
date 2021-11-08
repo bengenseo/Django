@@ -1,0 +1,13 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+    个人中心
+    <ul>
+        <li><a href="{% url 'web:changepwd' %}">修改密码</a></li>
+        <li><a href="{% url 'web:editprofile' %}">编辑</a></li>
+    </ul>
+    <p>{{ user.username }}</p>
+    <p>{{ user.email }}</p>
+    <p>{{ user.userinfo.name }}</p>
+    <p>{{ user.userinfo.phone }}</p>
+{% endblock %}

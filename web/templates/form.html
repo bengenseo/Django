@@ -1,0 +1,46 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+    <div class="clearfix"></div>
+    <main class="article w960 bw p20">
+        <article>
+            <h2 class="fz18 tc mb10">提出你的财商问题，让格局来为你解决。</h2>
+            <div class="form">
+                <form action="/plus/diy.php" name="myform" enctype="multipart/form-data" method="post"
+                      onSubmit='return Checkfeedback();'>
+                    <input type="hidden" name="action" value="post">
+                    <input type="hidden" name="diyid" value="1">
+                    <input type="hidden" name="do" value="2">
+                    <nav class="tc">
+                        <li class="ptb10">怎么称呼：<input type="text" name="name" id="name" value=""></li>
+                        <li class="ptb10">手机号码：<input type="text" name='tel' id='tel' value=""></li>
+                        <li class="ptb10">问题描述：<textarea name='content' id='content' style="width: 50%;"></textarea>
+                        </li>
+                    </nav>
+                    <input type="hidden" name="time" id="time" value="">
+                    <input type="hidden" name="ip" id="ip" value="">
+                    <div align="center" style="height:40px;">
+                        <input type="submit" name="submit" value="确定" class="coolbg">
+                        <input type="reset" name="reset" value="重置" class="coolbg">
+                    </div>
+                </form>
+                <script>
+                    //表单不能为空
+                    function Checkfeedback() {
+                        if (document.myform.name.value.length == 0) {
+                            alert('名字 不能为空');
+                            document.myform.name.focus();
+                            return false;
+                        }
+                        if (document.myform.tel.value.length == 0) {
+                            alert('手机 不能为空');
+                            document.myform.tel.focus();
+                            return false;
+                        }
+                    }
+                </script>
+            </div>
+            {{ write|safe }}
+        </article>
+    </main>
+{% endblock %}

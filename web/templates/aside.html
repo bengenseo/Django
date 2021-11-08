@@ -1,0 +1,29 @@
+<aside class="sideBar fr mt10">
+    <h2 class="fz16 p10">归类</h2>
+    <ul class="p10">
+        {% for item in category %}
+            <li class="ptb5"><a href="/{{item.type__sitepath}}">{{ item.type__typename }} ({{ item.c }})</a></li>
+        {% endfor %}
+    </ul>
+    <h2 class="fz16 p10">归档</h2>
+    <ul class="p10">
+{#        {% for item in file %}#}
+{#            <li class="ptb5"><a href="/{{ item.0|date:'Y' }}/{{ item.0|date:'m' }}">{{ item.0|date:'Y年m月' }} ({{ item.1 }})</a></li>#}
+{#        {% endfor %}#}
+        {% for item in file %}
+            <li class="ptb5"><a href="/{{ item.0|date:'Y' }}/{{ item.0|date:'m' }}">{{ item.0|date:'Y年m月' }} ({{ item.1 }})</a></li>
+        {% endfor %}
+    </ul>
+    <h2 class="fz16 p10">近期价值投资文章</h2>
+    <ul class="p10">
+        {% for item in news %}
+            <li class="ptb5"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2 class="fz16 p10">热门价值投资文章</h2>
+    <ul class="p10">
+        {% for item in hot %}
+            <li class="ptb5"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+</aside>

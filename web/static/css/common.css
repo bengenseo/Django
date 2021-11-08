@@ -1,0 +1,221 @@
+/**{word-wrap:break-word;;outline:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}*/
+@charset "utf-8";
+input,textarea{word-wrap:none;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+html{-webkit-text-size-adjust:none;overflow-x:hidden}
+div,ul,nav,menu,main{height: 100%;overflow:hidden}
+*{box-sizing:border-box}
+body,header,section,aside,article,figure,div,dl,dt,dd,nav,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span,img,menu{padding:0;margin:0}
+body{font:normal 14px/1.5em pbfont,"微软雅黑","冬青黑体简体中文 w3","宋体";}
+fieldset,img,html,body,iframe{border:0}
+/** 重置表格元素 **/
+table{border-collapse:collapse;border-spacing:0}
+th,td{text-align: left;font-weight: normal}
+ol,ul,nav{list-style:none}
+address,caption,cite,code,dfn,em,strong,th,var{font-weight:normal;font-style:normal}
+caption,th{text-align:left}
+em,i,small,caption,th{font-weight:normal;font-style:normal;font-size:100%}
+h1,h2,h3,h4,h5,h6,em{font-weight:normal;font-size: 100%}
+q:before,q:after{content:''}
+.clearfix{*zoom:1}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0}/*清除浮动*/
+a{color:#555;text-decoration:none}
+img{border:0;vertical-align:middle;max-width:100%}
+a,button{outline:none;border:0}
+select,.input{border: 1px solid #ccc;display: block;font-family:inherit}
+button::-moz-focus-inner{border:0;padding:0;margin:0}
+textarea,input,button,select{outline:0;font-size:inherit;line-height:inherit;color:inherit;font-family:inherit}
+textarea{overflow:auto;resize:none;font-family:inherit}
+
+input{line-height:normal;border:0;outline:none}
+input:focus{outline:0}
+input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;vertical-align:middle}
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}
+input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+input::-ms-clear,input::-ms-reveal{display:none}
+textarea,input{-webkit-tap-highlight-color:rgba(255,255,255,0);-webkit-user-modify:read-write-plaintext-only;outline:0!important}
+input::-moz-placeholder,textarea::-moz-placeholder{color:#a6a6a6}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#a6a6a6}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#a6a6a6}
+
+.ma{margin:0 auto}
+.fr{float:right!important}
+.fl{float:left!important}
+.hide{display:none}/*隐藏*/
+.none{position: fixed;top: 9999px;left: 9999px;}
+.hidden{visibility:hidden}/*超出就隐藏*/
+.show,.block{display:block}/*显示*/
+.inline{display:inline}/*行内块*/
+.ib{display:inline-block}/*内联块*/
+.por{position:relative!important}/*相对定位*/
+.poa{position:absolute!important}/*绝对定位*/
+.pof{position:fixed!important}
+.tc{text-align:center}/*文字居中*/
+
+.i-1{z-index:-1}
+.i1{z-index:1}
+.i2{z-index:2}
+
+.cr{color:red}
+.cb{color:blue}
+.cw{color:white}
+.cp{color:pink}
+.cg{color:gray}
+.green{color:green}
+
+.br{background:red}
+.bb{background:blue}
+.bw{background:white}
+.bp{background:pink}
+.bg{background:gray}
+
+.fb{font-weight: bold;}
+.fz12{font-size:12px!important}
+.fz13{font-size:13px!important}
+.fz14{font-size:14px!important}
+.fz16{font-size:16px!important}
+.fz18{font-size:18px!important}
+.fz20{font-size:20px!important}
+.fz22{font-size:22px!important}
+.fz24{font-size:24px!important}
+.fz28{font-size:28px!important}
+.fz32{font-size:32px!important}
+.fz48{font-size:48px!important}
+
+.h10{height:10px}
+.h20{height:20px}
+.h30{height:30px}
+.h40{height:40px}
+.h50{height:50px}
+.h{height:100%}
+
+.lh10{line-height:10px}
+.lh20{line-height:20px}
+.lh30{line-height:30px}
+.lh40{line-height:40px}
+.lh50{line-height:50px}
+
+.w30{width:30px}
+.w40{width:40px}
+.w50{width:50px}
+.w100{width:100px}
+.w150{width:150px}
+.w{width:100%}
+
+.t0{top:0}
+.t5{top:5px}
+.t10{top:10px}
+.t15{top:15px}
+.t20{top:20px}
+
+.r0{right:0}
+.r5{right:5px}
+.r10{right:10px}
+.r15{right:15px}
+.r20{right:20px}
+
+.b0{bottom:0}
+.b5{bottom:5px}
+.b10{bottom:10px}
+.b15{bottom:15px}
+.b20{bottom:20px}
+
+.l0{left:0}
+.l5{left:5px}
+.l10{left:10px}
+.l15{left:15px}
+.l20{left:20px}
+
+.m5{margin:5px}
+.m10{margin:10px}
+.m20{margin:20px}
+.m30{margin:30px}
+
+.mtb5{margin:5px 0}
+.mtb10{margin:10px 0}
+.mtb20{margin:20px 0}
+.mtb30{margin:30px 0}
+
+.mlr5{margin:0 5px}
+.mlr10{margin:0 10px}
+.mlr20{margin:0 20px}
+.mlr30{margin:0 30px}
+
+.mt5{margin-top:5px}
+.mt10{margin-top:10px}
+.mt15{margin-top:15px}
+.mt20{margin-top:20px}
+.mt30{margin-top:30px}
+.mt45{margin-top:45px}
+.mt60{margin-top:60px}
+
+.mr5{margin-right:5px}
+.mr10{margin-right:10px}
+.mr15{margin-right:15px}
+.mr20{margin-right:20px}
+.mr30{margin-right:30px}
+.mr45{margin-right:45px}
+.mr60{margin-right:60px}
+
+.mb5{margin-bottom:5px}
+.mb10{margin-bottom:10px}
+.mb15{margin-bottom:15px}
+.mb20{margin-bottom:20px}
+.mb30{margin-bottom:30px}
+.mb45{margin-bottom:45px}
+.mb60{margin-bottom:60px}
+
+.ml5{margin-left:5px}
+.ml10{margin-left:10px}
+.ml15{margin-left:15px}
+.ml20{margin-left:20px}
+.ml30{margin-left:30px}
+.ml45{margin-left:45px}
+.ml60{margin-left:60px}
+
+.p5{padding:5px}
+.p10{padding:10px}
+.p20{padding:20px}
+.p30{padding:30px}
+
+.ptb5{padding:5px 0}
+.ptb10{padding:10px 0}
+.ptb20{padding:20px 0}
+.ptb30{padding:30px 0}
+
+.plr5{padding:0 5px}
+.plr10{padding:0 10px}
+.plr20{padding:0 20px}
+.plr30{padding:0 30px}
+
+.pt5{padding-top:5px}
+.pt10{padding-top:10px}
+.pt15{padding-top:15px}
+.pt20{padding-top:20px}
+.pt30{padding-top:30px}
+.pt45{padding-top:45px}
+.pt60{padding-top:60px}
+
+.pr5{padding-right:5px}
+.pr10{padding-right:10px}
+.pr15{padding-right:15px}
+.pr20{padding-right:20px}
+.pr30{padding-right:30px}
+.pr45{padding-right:45px}
+.pr60{padding-right:60px}
+
+.pb5{padding-bottom:5px}
+.pb10{padding-bottom:10px}
+.pb15{padding-bottom:15px}
+.pb20{padding-bottom:20px}
+.pb30{padding-bottom:30px}
+.pb45{padding-bottom:45px}
+.pb60{padding-bottom:60px}
+
+.pl5{padding-left:5px}
+.pl10{padding-left:10px}
+.pl15{padding-left:15px}
+.pl20{padding-left:20px}
+.pl30{padding-left:30px}
+.pl45{padding-left:45px}
+.pl60{padding-left:60px}

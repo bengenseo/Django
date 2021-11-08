@@ -1,0 +1,33 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+    编辑
+    <form action="/editprofile/" method="post">
+        <p>
+            <label for="id_name">昵称:</label>
+            <input type="text" name="name" maxlength="150" value="{{ request.user.userinfo.name }}" autofocus=""
+                   required="" id="id_name">
+            {{ forms.errors.name }}
+        </p>
+        <p>
+            <label for="id_username">用户名:</label>
+            <input type="text" name="username" maxlength="150" value="{{ request.user.username }}" autofocus=""
+                   required="" id="id_username">
+            {{ forms.errors.username }}
+        </p>
+        <p>
+            <label for="id_phone">手机号:</label>
+            <input type="text" name="phone" maxlength="11" value="{{ request.user.userinfo.phone }}" autofocus=""
+                   required="" id="id_phone">
+            {{ forms.errors.phone }}
+        </p>
+        <p>
+            <label for="id_email">邮箱:</label>
+            <input type="text" name="email" maxlength="150" value="{{ request.user.email }}" autofocus="" required=""
+                   id="id_email">
+            {{ forms.errors.email }}
+        </p>
+        {% csrf_token %}
+        <button type="submit">提交</button>
+    </form>
+{% endblock %}
