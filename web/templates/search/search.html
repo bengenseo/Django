@@ -6,7 +6,7 @@
             <h2><a href="{{ item.object.get_absolute_url }}">{{ item.object.title }}</a></h2>
             <p>{{ item.object.keywords }}</p>
             <p>{{ item.object.description }}</p>
-{#            <p>{{ item.object.article.body|safe }}</p>#}
+            <p>{{ item.object.article.body|safe }}</p>
             {% empty %}
             <div>搜索不到相关结果</div>
         {% endfor %}

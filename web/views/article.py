@@ -1,9 +1,11 @@
 import math
+from itertools import chain
 
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render
 
 from web import models
+from baidu import related
 
 
 def listArticle(request, arctype_path):
@@ -12,8 +14,8 @@ def listArticle(request, arctype_path):
 
     # 获取当前页码
     num = int(request.GET.get('bn', 1))
-    # 创建分页,少于2条合并到上页
-    pager = Paginator(archives, 4,2)
+    # 创建分页,少于4条合并到上页
+    pager = Paginator(archives, 10, 4)
     # 获取当前分页
     try:
         archives = pager.page(num)
@@ -64,14 +66,19 @@ def article(request, article_id):
         title = item.title
         keywords = item.keywords
         description = item.description
+        arc_red = related.main(title)
+        arc_green = models.Archives.objects.filter(id=0)
+        for i in arc_red:
+            arc_green = chain(arc_green, models.Archives.objects.filter(id=i[0]))  # 合并QuerySet类型
+        arc_green = list(set(arc_green))  # 去重
     # 自增+1浏览数
     click = models.Archives.objects.get(id=article_id)
     click.increase_read_count()
+
     return render(request, 'article_article.html', locals())
 
 
 def file(request, year, month):
-    from django.db.models import Count
     # 归档
     article = models.Archives.objects.filter(pubdate__icontains=year + '-' + month)
     return render(request, 'file_article.html', locals())

@@ -12,9 +12,9 @@
             <div class="related mt30">
                 <h3 class="fz18 mb10">价值投资文章相关推荐：</h3>
                 <ul>
-                {dede:likeart row='14' titlelen='100'}
-                    <li class="fl lh30 plr5"><a href="[field:arcurl /]">[field:title /]</a></li>
-                {/dede:likeart}
+                    {% for item in arc_green %}
+                        <li class="fl lh30 plr5"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </article>
