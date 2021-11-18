@@ -89,6 +89,13 @@ DATABASES = {
     }
 }
 
+# 数据库信息
+MYDBHOST = 'localhost'
+MYDBUSER = 'root'
+MYDBPASS = ''
+MYPORT=3306
+MYDBNAME = 'fq'
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 

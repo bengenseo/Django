@@ -8,20 +8,16 @@ from whoosh import index
 from jieba.analyse import ChineseAnalyzer
 import random
 import hashlib
-# 数据库信息
-DBHOST = 'localhost'
-DBUSER = 'root'
-DBPASS = ''
-DBNAME = 'fq'
+from fq.settings import MYDBHOST,MYDBUSER,MYDBPASS,MYDBNAME,MYPORT
 
 start = time.time()
 
 try:
-    db = pymysql.connect(host=DBHOST, user=DBUSER, password=DBPASS, db=DBNAME, port=3306, charset='utf8')
+    db = pymysql.connect(host=MYDBHOST, user=MYDBUSER, password=MYDBPASS, db=MYDBNAME, port=MYPORT, charset='utf8')
     db.commit()
     print('数据库连接成功')
 except pymysql.Error as e:
-    print('%s数据库连接失败：' % DBNAME + str(e))
+    print('%s数据库连接失败：' % MYDBNAME + str(e))
     print('表格创建失败：' + str(e))
 
 
